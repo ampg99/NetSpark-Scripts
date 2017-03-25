@@ -6,9 +6,6 @@ import csv, os.path
 # Begin timing the script
 start_time = datetime.now()
 
-# Do the BAD and define global variables to handle shitty CSVfile
-
-
 # Define the primary function (to be moved to a separate module some day...)
 def bParse(filename):
     with open(filename, mode='r') as csvfile:

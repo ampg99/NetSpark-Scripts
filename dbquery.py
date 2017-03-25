@@ -10,10 +10,22 @@ from tinydb import TinyDB, Query
 # Define the Database
 db = TinyDB('netspark.json')
 
-# Construct additional pylons
-ipaddr = raw_input("What IP do you want to search for: ")
+def querydept(department):
+    Device = Query()
+    dblineD = db.search(Device.department == department)
+    return dblineD;
 
-# Make the query
-findit = Query()
-fresult = db.search(findit.ip == ipaddr)
-print fresult
+def queryip(ip):
+    Device = Query()
+    dblineI = db.search(Device.ip == ip)
+    return dblineI;
+
+def queryhost(hostname):
+    Device = Query()
+    dblineH = db.search(Device.hostname == hostname)
+    return dblineH;
+
+def querytype(device_type):
+    Device = Query()
+    dblineT = db.search(Device.device_type == device_type)
+    return dblineT;
